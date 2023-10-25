@@ -1,13 +1,22 @@
 #include <stdio.h>
 
 void main(){
+    char username[30], password[30];
 
-    int jawaban;
+    printf("=== Welcome to Awesome Program ===\n");
+    printf("Username: ");
+    scanf("%s", &username);
+    printf("Password: ");
+    scanf("%s", &password);
 
-    printf("Berapakah hasil 3+4?\n");
-    printf("jawab> ");
-    scanf("%d", &jawaban);
-
-    printf("Jawaban anda: %s\n", (jawaban == 7) ? "Benar" : "Salah");
+    if(strcmp(username, "petanikode") == 0){
+        if(strcmp(password, "kopi") == 0){
+            printf("Selamat datang bos!\n");
+        } else {
+            printf("Password salah, coba lagi!\n");
+        }
+    } else {
+        printf("Anda belum terdaftar\n");
+    }
 
 }
