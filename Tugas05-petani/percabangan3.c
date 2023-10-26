@@ -29,4 +29,3 @@ void main(){
 
     printf("Nilai: %i\n", nilai);
     printf("Grade anda: %c\n", grade);
-}

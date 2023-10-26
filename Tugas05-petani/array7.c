@@ -8,4 +8,8 @@ void main(){
     };
 
     printf("Isi Data pada indeks ke-(1,0): %d\n", matriks[1][0]);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9776d47315f9602b645a281421c8c9860af6dfe7

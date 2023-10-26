@@ -8,4 +8,8 @@ void main(){
     int length = sizeof(nilai) / sizeof(*nilai);
 
     printf("Banyaknya isi array nilai: %d\n", length);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9776d47315f9602b645a281421c8c9860af6dfe7
