@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 // Fungsi yang akan diintegralkan (fungsi kelompok kami (x+2)^2)
 double fungsi(double x) {
@@ -7,12 +6,12 @@ double fungsi(double x) {
 }
 
 // Metode trapesium untuk menghitung integral
-double trapesium(double alas_a, double alas_b, int n) {
-    double h = (alas_b - alas_a) / n;
-    double integral = (fungsi(alas_a) + fungsi(alas_b)) / 4.0;
+double trapesium(double a, double b, int n) {
+    double h = (b - a) / n;
+    double integral = (fungsi(a) + fungsi(b)) / 4.0;
 
     for (int i = 1; i < n; i++) {
-        double x = alas_a + i * h;
+        double x = a + i * h;
         integral += fungsi(x);
     }
 
@@ -20,20 +19,21 @@ double trapesium(double alas_a, double alas_b, int n) {
 }
 
 int main() {
-    double batas_bawah = 0; // Batas bawah
-    double batas_atas = 4;  // Batas atas
+    double batas_bawah = 0; 
+    double batas_atas = 4;  
     int N;
 
     printf("Masukkan jumlah sub-interval: ");
     scanf("%d", &N);
 
-    double hasilNumerik = trapesium(batas_bawah, batas_atas, N);
+    double hasil_integral = (batas_atas * batas_atas * batas_atas / 3) - (batas_bawah * batas_bawah * batas_bawah / 3);
 
     // Perhitungan integral secara analitik 
-    double hasilAnalitik = (batas_atas * batas_atas * batas_atas / 3) - (batas_bawah * batas_bawah * batas_bawah / 3);
+    double hasil_analitik = trapesium(batas_bawah, batas_atas, N);
+    
 
-    printf("Hasil integral metode trapezoid: %lf\n", hasilNumerik);
-    printf("Hasil integral analitik : %lf\n", hasilAnalitik);
+    printf("Hasil hitung integral : %lf\n", hasil_integral);
+    printf("Hasil integral analitik : %lf\n", hasil_analitik);
 
     return 0;
 }
