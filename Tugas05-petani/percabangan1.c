@@ -1,20 +1,19 @@
 #include <stdio.h>
+#define phi 3.14//(A)tentukan variabel
 
-void main(){
-    printf("== Program Pembayaran ==\n");
-    int total_belanja = 0;
+int main () {
+    float v, r, t;//(B)Tentukan tipe data
 
-    printf("Inputkan total belanja: ");
-    scanf("%i", &total_belanja);
+    //Input
+    printf("Jari jari kerucut : "); 
+    scanf ("%f",&r);//(C)Tentukan variabel
+    printf("Tinggi kerucut : ");
+    scanf("%f",&t);
 
-    // menggunakan blok percabangan if
-    if( total_belanja > 100000 ){
-        printf("Selamat, Anda mendapatkan hadiah!\n");
-    }
+    //Oprasi hitung
+    v = phi*1/3*r*r*t;
 
-    printf("Terimakasih sudah berbelanja di toko kami\n\n");
-<<<<<<< HEAD
+    //Output
+    printf("Volume Kerucut = %.2f cm^3",&v);//(D)Tentukan format sehingga 2 angka belakang koma
+    return 0;
 }
-=======
-}
->>>>>>> 9776d47315f9602b645a281421c8c9860af6dfe7

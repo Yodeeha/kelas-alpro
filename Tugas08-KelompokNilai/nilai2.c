@@ -1,32 +1,31 @@
 #include <stdio.h>
 #include <string.h>
 
-// Fungsi untuk menghitung nilai akhir
+
 int calcnilai(int tugas, int quiz, int UTS, int UAS) {
-    return (10 * tugas / 100) + (20 * quiz / 100) + (30 * UTS / 100) + (40 * UAS / 100);
+    return (0.1 * tugas) + (0.2 * quiz) + (0.3 * UTS) + (0.4 * UAS);
 }
 
-// Fungsi untuk menampilkan nilai akhir, huruf mutu, dan keterangan
 void displaynilaiakhir(char *nama, char *nim, int nilaiakhir) {
     char *hurufmutu;
     char *keterangan;
 
     if (nilaiakhir > 90) {
-       strcpy (hurufmutu, "A");
+        strcpy (hurufmutu, "A");
         keterangan = "Lulus";
-    } else if (81 <= nilaiakhir <= 90) {
+    } else if (81 <= nilaiakhir && nilaiakhir <= 90) {
         strcpy (hurufmutu, "AB");
         keterangan = "Lulus";
-    } else if (71 <= nilaiakhir <= 80) {
+    } else if (71 <= nilaiakhir && nilaiakhir <= 80) {
         strcpy (hurufmutu, "B");
         keterangan = "Lulus";
-    } else if (61 <= nilaiakhir <= 70) {
+    } else if (61 <= nilaiakhir && nilaiakhir <= 70) {
         strcpy (hurufmutu, "BC");
         keterangan = "Lulus";
-    } else if (51 <= nilaiakhir <= 60) {
+    } else if (51 <= nilaiakhir && nilaiakhir <= 60) {
         strcpy (hurufmutu, "C");
         keterangan = "Lulus";
-    } else if (45 <= nilaiakhir <= 50) {
+    } else if (45 <= nilaiakhir && nilaiakhir<= 50) {
         strcpy (hurufmutu, "D");
         keterangan = "Tidak Lulus";
     } else if (nilaiakhir < 45) {
@@ -46,19 +45,18 @@ int main() {
     char nim[20];
     int tugas, quiz, UTS, UAS;
 
-    // Input data mahasiswa
-    printf("Nama Mahasiswa : "); scanf("%s", nama);
-    printf("NIM : "); scanf("%s", nim);
+   
+    printf("Nama Mahasiswa : "); scanf("%s", &nama);
+    printf("NIM : "); scanf("%s", &nim);
     printf("Nilai Tugas : "); scanf("%d", &tugas);
     printf("Nilai Quiz : "); scanf("%d", &quiz);
     printf("Nilai UTS : "); scanf("%d", &UTS);
     printf("Nilai UAS  : "); scanf("%d", &UAS);
-   
+    printf("\n");
 
-    // Hitung nilai akhir menggunakan fungsi calcnilai
+   
     int nilaiakhir = calcnilai(tugas, quiz, UTS, UAS);
 
-    // Tampilkan hasil menggunakan fungsi displaynilaiakhir
     displaynilaiakhir(nama, nim, nilaiakhir);
 
     return 0;
