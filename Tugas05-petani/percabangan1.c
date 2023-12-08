@@ -14,6 +14,6 @@ int main () {
     v = phi*1/3*r*r*t;
 
     //Output
-    printf("Volume Kerucut = %.2f cm^3",&v);//(D)Tentukan format sehingga 2 angka belakang koma
+    printf("Volume Kerucut = %.2f cm^3",v);//(D)Tentukan format sehingga 2 angka belakang koma
     return 0;
 }
